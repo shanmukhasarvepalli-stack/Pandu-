@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Desk | Management</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark">S</div>
+    <div><p class="eyebrow">CAMPUS ADMIN</p><h1>Student Desk</h1></div>
+    <span class="status"><span></span> Database app</span>
+  </header>
+  <main class="layout">
+    <section class="intro">
+      <div>
+        <p class="eyebrow">STUDENT DIRECTORY</p>
+        <h2>Manage your<br><span>student records.</span></h2>
+        <p class="subtitle">A simple full-stack demo powered by Java, Spring Boot, JDBC and MySQL.</p>
+      </div>
+      <div class="stat-card"><span>Total students</span><strong id="totalCount">0</strong><small>Records in your database</small></div>
+    </section>
+    <section class="panel">
+      <div class="panel-heading"><div><p class="eyebrow">STUDENT DETAILS</p><h3 id="formTitle">Add a student</h3></div><button id="cancelEdit" class="button ghost hidden" type="button">Cancel edit</button></div>
+      <form id="studentForm">
+        <input id="studentId" type="hidden">
+        <label>Full name<input id="name" name="name" maxlength="100" placeholder="e.g. Pandu Kumar" required></label>
+        <div class="form-row">
+          <label>Email address<input id="email" name="email" type="email" maxlength="150" placeholder="name@example.com" required></label>
+          <label>Course<input id="course" name="course" maxlength="100" placeholder="e.g. Java Full Stack" required></label>
+        </div>
+        <div class="form-actions"><p id="formMessage" role="status"></p><button class="button primary" type="submit" id="saveButton">Save student <span>↗</span></button></div>
+      </form>
+    </section>
+    <section class="directory">
+      <div class="directory-heading"><div><p class="eyebrow">YOUR DATABASE</p><h3>Student records</h3></div><button class="button ghost" id="refreshButton" type="button">↻ Refresh</button></div>
+      <div id="notice" class="notice hidden" role="status"></div>
+      <div class="table-wrap"><table><thead><tr><th>STUDENT</th><th>EMAIL</th><th>COURSE</th><th>ACTIONS</th></tr></thead><tbody id="studentRows"><tr><td colspan="4" class="empty">Loading students…</td></tr></tbody></table></div>
+    </section>
+    <footer>Built with Java · Spring Boot · JDBC · MySQL</footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
